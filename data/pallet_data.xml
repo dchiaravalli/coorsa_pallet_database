@@ -1,0 +1,18 @@
+<data>
+    <code name="pallet1">
+        <subitem name="box">
+            <dat name="dim_x">0.031</dat>
+            <dat name="dim_y">0.023</dat>
+            <dat name="dim_z">0.021</dat>
+            <dat name="type">1</dat>
+        </subitem>
+        <subitem name ="pallet">
+            <dat name="pos_x">0.0</dat>
+            <dat name="pos_y">0.0</dat>
+            <dat name="pos_z">0.0</dat>            
+            <dat name="dim_x">0.0</dat>
+            <dat name="dim_y">0.0</dat>
+            <dat name="dim_z">0.0</dat>   
+        </subitem>
+    </code>
+</data>

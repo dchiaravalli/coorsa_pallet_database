@@ -1,0 +1,7 @@
+string pallet_name
+geometry_msgs/Pose[] box_detected
+std_msgs/Float64MultiArray plane_detected
+
+-----------------------
+
+bool acknowledged

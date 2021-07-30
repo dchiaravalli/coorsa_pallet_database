@@ -1,0 +1,9 @@
+int32 box_type
+
+--------------------------
+
+string pallet_name
+geometry_msgs/Pose pallet_pose
+geometry_msgs/Pose pallet_dim
+geometry_msgs/Pose box_dim
+bool box_detected

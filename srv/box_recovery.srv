@@ -1,0 +1,6 @@
+int32 box_number
+
+------------------
+
+geometry_msgs/Pose[] box_list
+bool box_available
