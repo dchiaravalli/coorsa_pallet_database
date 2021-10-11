@@ -1,18 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <data>
-    <code name="pallet1">
-        <subitem name="box">
-            <dat name="dim_x">0.031</dat>
-            <dat name="dim_y">0.023</dat>
-            <dat name="dim_z">0.021</dat>
-            <dat name="type">1</dat>
-        </subitem>
-        <subitem name ="pallet">
-            <dat name="pos_x">0.0</dat>
-            <dat name="pos_y">0.0</dat>
-            <dat name="pos_z">0.0</dat>            
-            <dat name="dim_x">0.0</dat>
-            <dat name="dim_y">0.0</dat>
-            <dat name="dim_z">0.0</dat>   
-        </subitem>
-    </code>
+  <code name="pallet_1">
+    <subitem name="box">
+      <dat name="dim_x">0.3</dat>
+      <dat name="dim_y">0.2</dat>
+      <dat name="dim_z">0.25</dat>
+      <dat name="type">4</dat>
+    </subitem>
+    <subitem name="pallet">
+      <dat name="pos_x">0.0</dat>
+      <dat name="pos_y">-5.0</dat>
+      <dat name="pos_z">-0.0</dat>
+      <dat name="dim_x">1.25076246262</dat>
+      <dat name="dim_y">0.846919059753</dat>
+      <dat name="dim_z">0</dat>
+    </subitem>
+    <subitem name="approaching_poses">
+      <dat name="ap_x1">0.62621307373</dat>
+      <dat name="ap_y1">-5.9251241684</dat>
+      <dat name="ao_w1">1.0</dat>
+      <dat name="ao_z1">-0.0</dat>
+      <dat name="ap_x2">-0.624549388885</dat>
+      <dat name="ap_y2">-4.07820510864</dat>
+      <dat name="ao_w2">1.0</dat>
+      <dat name="ao_z2">0.0</dat>
+  </subitem>
+  </code>
+  <code name="pallet_2">
+    <subitem name="box">
+      <dat name="dim_x">0.3</dat>
+      <dat name="dim_y">0.2</dat>
+      <dat name="dim_z">0.1</dat>
+      <dat name="type">3</dat>
+    </subitem>
+    <subitem name="pallet">
+      <dat name="pos_x">-0.0</dat>
+      <dat name="pos_y">-5.0</dat>
+      <dat name="pos_z">0.0</dat>
+      <dat name="dim_x">1.24829437634</dat>
+      <dat name="dim_y">0.84672992008</dat>
+      <dat name="dim_z">0</dat>
+    </subitem>
+    <subitem name="approaching_poses">
+      <dat name="ap_x1">0.624054102511</dat>
+      <dat name="ap_y1">-5.9232460164</dat>
+      <dat name="ao_w1">-0.000606028757919</dat>
+      <dat name="ao_z1">0.999999816365</dat>
+      <dat name="ap_x2">-0.626477699373</dat>
+      <dat name="ap_y2">-4.07803045712</dat>
+      <dat name="ao_w2">0.999999816365</dat>
+      <dat name="ao_z2">0.000606028757919</dat>
+    </subitem>
+  </code>
 </data>

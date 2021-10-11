@@ -2,12 +2,13 @@
 # coding=utf-8
 class Pallet:
 
-    def __init__(self, box_dimensions, box_type, pallet_pose, pallet_dim, pallet_layers):
+    def __init__(self, box_dimensions, box_type, pallet_pose, pallet_dim, pallet_layers, approaching_pose):
         self.box_dimensions = box_dimensions        #dimension of pallet boxes on order length, width, height
         self.box_type = box_type                    #type of box (some tag used by database to sort by type)
         self.pallet_pose = pallet_pose              #position of the center of the pallet w.r.t. world reference frame
         self.pallet_dim = pallet_dim                #dimension of the pallet on order length width height (0 if not known)
         self.pallet_layers = pallet_layers
+        self.approaching_pose = approaching_pose
         self.box_list = []
         self.layer_dimensions = [0,0,0]
 
@@ -36,7 +37,10 @@ class Pallet:
     def getBoxType(self):                                   #get type of boxes
         return self.box_type
 
-    def getPlaneEstimate(self):                             #get estimate of next plane 
+    def getApproachingPose(self):
+        return self.approaching_pose
+
+    def getPlaneEstimate(self):                             #get estimate of next plane
         #TODO
         pass
 

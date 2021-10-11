@@ -32,6 +32,14 @@ class PalletDatabase:
         res.box_dim.position.x = data['box_dim'][0]
         res.box_dim.position.y = data['box_dim'][1]
         res.box_dim.position.z = data['box_dim'][2]
+        res.approaching_pose_1.position.x = data['app_pose'][0]
+        res.approaching_pose_1.position.y = data['app_pose'][1]
+        res.approaching_pose_1.orientation.w = data['app_pose'][2]
+        res.approaching_pose_1.orientation.z = data['app_pose'][3]
+        res.approaching_pose_2.position.x = data['app_pose'][4]
+        res.approaching_pose_2.position.y = data['app_pose'][5]
+        res.approaching_pose_2.orientation.w = data['app_pose'][6]
+        res.approaching_pose_2.orientation.z = data['app_pose'][7]
         res.box_detected = data['box_detected']
         return res
 
@@ -42,7 +50,7 @@ class PalletDatabase:
         data['name'] = req.pallet_name
         data['plane'] = [req.plane_detected.data[0],req.plane_detected.data[1],req.plane_detected.data[2],req.plane_detected.data[3]]
         for item in req.box_detected:
-            data['box_list'].append([item.position.x, item.position.y, item.position.z]) 
+            data['box_list'].append([item.position.x, item.position.y, item.position.z])
         self.pallet_handler.setPalletDetectionData(data)
         return res
 
@@ -60,10 +68,9 @@ class PalletDatabase:
             res.box_list.append(copy.deepcopy(temp))
             res.box_available = True
         return res
-    
+
     def box_confirm_cb(self,req):
         res = box_confirmResponse()
         self.pallet_handler.confirmBoxRecovery(req.box_number)
         res.acknowledged = True
         return res
-        

@@ -295,15 +295,15 @@ def SavePallet():
         ET.SubElement(box,'dat',name = 'dim_z').text = str(boxInfo[3])
         ET.SubElement(box,'dat',name = 'type').text = str(boxInfo[0])
         #Subitem ApproachingPoses
-        ET.SubElement(approach,'dat',name = 'pos_x1').text = str(ApproachingPoint[0].pose.position.x)
-        ET.SubElement(approach,'dat',name = 'pos_y1').text = str(ApproachingPoint[0].pose.position.y)
-        ET.SubElement(approach,'dat',name = 'or_w1').text = str(ApproachingPoint[0].pose.orientation.w)
-        ET.SubElement(approach,'dat',name = 'or_z1').text = str(ApproachingPoint[0].pose.orientation.z)
+        ET.SubElement(approach,'dat',name = 'ap_x1').text = str(ApproachingPoint[0].pose.position.x)
+        ET.SubElement(approach,'dat',name = 'ap_y1').text = str(ApproachingPoint[0].pose.position.y)
+        ET.SubElement(approach,'dat',name = 'ao_w1').text = str(ApproachingPoint[0].pose.orientation.w)
+        ET.SubElement(approach,'dat',name = 'ao_z1').text = str(ApproachingPoint[0].pose.orientation.z)
 
-        ET.SubElement(approach,'dat',name = 'pos_x2').text = str(ApproachingPoint[1].pose.position.x)
-        ET.SubElement(approach,'dat',name = 'pos_y2').text = str(ApproachingPoint[1].pose.position.y)
-        ET.SubElement(approach,'dat',name = 'or_w2').text = str(ApproachingPoint[1].pose.orientation.w)
-        ET.SubElement(approach,'dat',name = 'or_z2').text = str(ApproachingPoint[1].pose.orientation.z)
+        ET.SubElement(approach,'dat',name = 'ap_x2').text = str(ApproachingPoint[1].pose.position.x)
+        ET.SubElement(approach,'dat',name = 'ap_y2').text = str(ApproachingPoint[1].pose.position.y)
+        ET.SubElement(approach,'dat',name = 'ao_w2').text = str(ApproachingPoint[1].pose.orientation.w)
+        ET.SubElement(approach,'dat',name = 'ao_z2').text = str(ApproachingPoint[1].pose.orientation.z)
 
 
         #Salvo il nuovo file xml

@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from pallet import Pallet
 
 class PalletHandler:
-    
+
     def __init__(self,pallet_file_path):
         self.pallet_file_path = pallet_file_path
         self.pallet_map = {}
@@ -48,7 +48,25 @@ class PalletHandler:
                             pos_z = float(dat.text)
                         if dat.get('name') == 'layers':
                             layers = float(dat.text)
-            self.pallet_dict[code.get('name')] = Pallet([box_x,box_y,box_z],box_t,[pos_x,pos_y,pos_z],[dim_x,dim_y,dim_z],layers)
+                if subitem.get('name') == 'approaching_poses':
+                    for dat in subitem.findall('dat'):
+                        if dat.get('name') == 'ap_x1':
+                            ap_x1 = float(dat.text)
+                        if dat.get('name') == 'ap_y1':
+                            ap_y1 = float(dat.text)
+                        if dat.get('name') == 'ao_w1':
+                            ao_w1 = float(dat.text)
+                        if dat.get('name') == 'ao_z1':
+                            ao_z1 = float(dat.text)
+                        if dat.get('name') == 'ap_x2':
+                            ap_x2 = float(dat.text)
+                        if dat.get('name') == 'ap_y2':
+                            ap_y2 = float(dat.text)
+                        if dat.get('name') == 'ao_w2':
+                            ao_w2 = float(dat.text)
+                        if dat.get('name') == 'ao_z2':
+                            ao_z2 = float(dat.text)
+            self.pallet_dict[code.get('name')] = Pallet([box_x,box_y,box_z],box_t,[pos_x,pos_y,pos_z],[dim_x,dim_y,dim_z],layers,[ap_x1,ap_y1,ao_w1,ao_z1,ap_x2,ap_y2,ao_w2,ao_z2])
         print(self.pallet_dict)
 
     def createPalletMap(self):                                              #list all pallets according to box type
@@ -60,7 +78,7 @@ class PalletHandler:
 
     def orderPalletMap(self):
         pass
-            
+
     def getPalletPose(self, box_type = 1):
         self.current_pallet_name = self.pallet_map[box_type][0]
         pallet_data = {}
@@ -82,6 +100,7 @@ class PalletHandler:
         pallet_data['pose'] = self.pallet_dict[self.current_pallet_name].getPalletPose()
         pallet_data['dim'] = self.pallet_dict[self.current_pallet_name].getPalletDim()
         pallet_data['box_dim'] = self.pallet_dict[self.current_pallet_name].getBoxDimensions()
+        pallet_data['app_pose'] = self.pallet_dict[self.current_pallet_name].getApproachingPose()
         if not self.pallet_dict[self.current_pallet_name].box_list:
             pallet_data['box_detected'] = False
         else:
